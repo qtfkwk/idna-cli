@@ -30,6 +30,18 @@ $ idna -d xn--gogle-kua.com
 !run:../target/release/idna -d xn--gogle-kua.com
 ```
 
+## Files
+
+```text
+$ idna -f unicode.txt
+!run:../target/release/idna -f ../unicode.txt
+```
+
+```text
+$ idna -df ascii.txt
+!run:../target/release/idna -df ../ascii.txt
+```
+
 ## JSON output
 
 ```text
@@ -52,15 +64,25 @@ $ idna -d xn--gogle-kua.com -o json-pretty
 !run:../target/release/idna -d xn--gogle-kua.com -o json-pretty
 ```
 
-## Files
+### Files to JSON
 
 ```text
-$ idna -f unicode.txt
-!run:../target/release/idna -f ../unicode.txt
+$ idna -f unicode.txt -o json
+!run:../target/release/idna -f ../unicode.txt -o json
 ```
 
 ```text
-$ idna -df ascii.txt
-!run:../target/release/idna -df ../ascii.txt
+$ idna -df ascii.txt -o json
+!run:../target/release/idna -df ../ascii.txt -o json
+```
+
+```text
+$ idna -f unicode.txt -o json-pretty
+!run:../target/release/idna -f ../unicode.txt -o json-pretty
+```
+
+```text
+$ idna -df ascii.txt -o json-pretty
+!run:../target/release/idna -df ../ascii.txt -o json-pretty
 ```
 

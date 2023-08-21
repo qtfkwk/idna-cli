@@ -24,7 +24,7 @@ Options:
 
 ```text
 $ idna -V
-idna 0.1.2
+idna 0.1.3
 ```
 
 # Examples
@@ -41,6 +41,20 @@ $ idna goögle.com
 
 ```text
 $ idna -d xn--gogle-kua.com
+"ASCII","Unicode","Errors"
+"xn--gogle-kua.com","goögle.com",""
+```
+
+## Files
+
+```text
+$ idna -f unicode.txt
+"Unicode","ASCII","Errors"
+"goögle.com","xn--gogle-kua.com",""
+```
+
+```text
+$ idna -df ascii.txt
 "ASCII","Unicode","Errors"
 "xn--gogle-kua.com","goögle.com",""
 ```
@@ -83,17 +97,41 @@ $ idna -d xn--gogle-kua.com -o json-pretty
 }
 ```
 
-## Files
+### Files to JSON
 
 ```text
-$ idna -f unicode.txt
-"Unicode","ASCII","Errors"
-"goögle.com","xn--gogle-kua.com",""
+$ idna -f unicode.txt -o json
+{"File: \"../unicode.txt\"":{"goögle.com":{"ascii":"xn--gogle-kua.com","unicode":"goögle.com","errors":""}}}
 ```
 
 ```text
-$ idna -df ascii.txt
-"ASCII","Unicode","Errors"
-"xn--gogle-kua.com","goögle.com",""
+$ idna -df ascii.txt -o json
+{"File: \"../ascii.txt\"":{"xn--gogle-kua.com":{"ascii":"xn--gogle-kua.com","unicode":"goögle.com","errors":""}}}
+```
+
+```text
+$ idna -f unicode.txt -o json-pretty
+{
+  "File: \"../unicode.txt\"": {
+    "goögle.com": {
+      "ascii": "xn--gogle-kua.com",
+      "unicode": "goögle.com",
+      "errors": ""
+    }
+  }
+}
+```
+
+```text
+$ idna -df ascii.txt -o json-pretty
+{
+  "File: \"../ascii.txt\"": {
+    "xn--gogle-kua.com": {
+      "ascii": "xn--gogle-kua.com",
+      "unicode": "goögle.com",
+      "errors": ""
+    }
+  }
+}
 ```
 
