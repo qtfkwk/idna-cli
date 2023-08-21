@@ -24,7 +24,7 @@ Options:
 
 ```text
 $ idna -V
-idna 0.1.3
+idna 0.1.4
 ```
 
 # Examples
@@ -101,18 +101,18 @@ $ idna -d xn--gogle-kua.com -o json-pretty
 
 ```text
 $ idna -f unicode.txt -o json
-{"File: \"../unicode.txt\"":{"goögle.com":{"ascii":"xn--gogle-kua.com","unicode":"goögle.com","errors":""}}}
+{"File: \"unicode.txt\"":{"goögle.com":{"ascii":"xn--gogle-kua.com","unicode":"goögle.com","errors":""}}}
 ```
 
 ```text
 $ idna -df ascii.txt -o json
-{"File: \"../ascii.txt\"":{"xn--gogle-kua.com":{"ascii":"xn--gogle-kua.com","unicode":"goögle.com","errors":""}}}
+{"File: \"ascii.txt\"":{"xn--gogle-kua.com":{"ascii":"xn--gogle-kua.com","unicode":"goögle.com","errors":""}}}
 ```
 
 ```text
 $ idna -f unicode.txt -o json-pretty
 {
-  "File: \"../unicode.txt\"": {
+  "File: \"unicode.txt\"": {
     "goögle.com": {
       "ascii": "xn--gogle-kua.com",
       "unicode": "goögle.com",
@@ -125,7 +125,7 @@ $ idna -f unicode.txt -o json-pretty
 ```text
 $ idna -df ascii.txt -o json-pretty
 {
-  "File: \"../ascii.txt\"": {
+  "File: \"ascii.txt\"": {
     "xn--gogle-kua.com": {
       "ascii": "xn--gogle-kua.com",
       "unicode": "goögle.com",
