@@ -24,7 +24,7 @@ Options:
 
 ```text
 $ idna -V
-idna 0.1.1
+idna 0.1.2
 ```
 
 # Examples
@@ -33,7 +33,7 @@ idna 0.1.1
 
 ```text
 $ idna goögle.com
-Unicode,ASCII,Errors
+"Unicode","ASCII","Errors"
 "goögle.com","xn--gogle-kua.com",""
 ```
 
@@ -41,7 +41,7 @@ Unicode,ASCII,Errors
 
 ```text
 $ idna -d xn--gogle-kua.com
-ASCII,Unicode,Errors
+"ASCII","Unicode","Errors"
 "xn--gogle-kua.com","goögle.com",""
 ```
 
@@ -87,13 +87,13 @@ $ idna -d xn--gogle-kua.com -o json-pretty
 
 ```text
 $ idna -f unicode.txt
-Unicode,ASCII,Errors
+"Unicode","ASCII","Errors"
 "goögle.com","xn--gogle-kua.com",""
 ```
 
 ```text
 $ idna -df ascii.txt
-ASCII,Unicode,Errors
+"ASCII","Unicode","Errors"
 "xn--gogle-kua.com","goögle.com",""
 ```
 

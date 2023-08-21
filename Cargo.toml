@@ -1,6 +1,6 @@
 [package]
 name = "idna-cli"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Encode/decode Unicode domain names to/from IDNA ASCII"
 license = "MIT"

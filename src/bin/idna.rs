@@ -62,9 +62,9 @@ fn main() {
     if cli.output == "csv" {
         // Print header
         if cli.decode {
-            println!("ASCII,Unicode,Errors");
+            println!("\"ASCII\",\"Unicode\",\"Errors\"");
         } else {
-            println!("Unicode,ASCII,Errors");
+            println!("\"Unicode\",\"ASCII\",\"Errors\"");
         }
 
         // Process arguments
