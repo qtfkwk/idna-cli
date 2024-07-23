@@ -13,14 +13,14 @@ where
 // https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html#a-more-efficient-approach
 
 pub fn to_unicode(domain: &str) -> (String, String) {
-    match idna::domain_to_unicode(&domain) {
+    match idna::domain_to_unicode(domain) {
         (s, Ok(_)) => (s, String::new()),
         (s, Err(e)) => (s, e.to_string()),
     }
 }
 
 pub fn to_ascii(domain: &str) -> (String, String) {
-    match idna::domain_to_ascii(&domain) {
+    match idna::domain_to_ascii(domain) {
         Ok(s) => (s, String::new()),
         Err(e) => (String::new(), e.to_string()),
     }

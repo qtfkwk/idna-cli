@@ -68,21 +68,21 @@ $ idna -d xn--gogle-kua.com -o json-pretty
 
 ```text
 $ idna -f unicode.txt -o json
-!run:../target/release/idna -f ../unicode.txt -o json
+!run:../target/release/idna -f ../unicode.txt -o json |sed 's/\.\.\///'
 ```
 
 ```text
 $ idna -df ascii.txt -o json
-!run:../target/release/idna -df ../ascii.txt -o json
+!run:../target/release/idna -df ../ascii.txt -o json |sed 's/\.\.\///'
 ```
 
 ```text
 $ idna -f unicode.txt -o json-pretty
-!run:../target/release/idna -f ../unicode.txt -o json-pretty
+!run:../target/release/idna -f ../unicode.txt -o json-pretty |sed 's/\.\.\///'
 ```
 
 ```text
 $ idna -df ascii.txt -o json-pretty
-!run:../target/release/idna -df ../ascii.txt -o json-pretty
+!run:../target/release/idna -df ../ascii.txt -o json-pretty |sed 's/\.\.\///'
 ```
 
