@@ -24,7 +24,7 @@ Options:
 
 ```text
 $ idna -V
-idna 0.1.5
+idna 0.1.6
 ```
 
 # Examples
