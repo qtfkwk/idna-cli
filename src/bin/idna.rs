@@ -1,4 +1,4 @@
-use clap::Parser;
+use clap::{builder::Styles, Parser};
 use idna_cli::*;
 use indexmap::IndexMap;
 use std::path::PathBuf;
@@ -8,8 +8,17 @@ const EXIT_CODE_INPUT_FILES_DONT_EXIST: i32 = 2;
 
 const OUTPUT_FORMATS: &[&str] = &["csv", "json", "json-pretty", "rust", "rust-pretty"];
 
+const STYLES: Styles = Styles::styled()
+    .header(clap_cargo::style::HEADER)
+    .usage(clap_cargo::style::USAGE)
+    .literal(clap_cargo::style::LITERAL)
+    .placeholder(clap_cargo::style::PLACEHOLDER)
+    .error(clap_cargo::style::ERROR)
+    .valid(clap_cargo::style::VALID)
+    .invalid(clap_cargo::style::INVALID);
+
 #[derive(Parser)]
-#[command(name = "idna", about, version, max_term_width = 80)]
+#[command(name = "idna", about, version, max_term_width = 80, styles = STYLES)]
 struct Cli {
     /// Decode IDNA ASCII input to Unicode
     #[arg(short, long)]
