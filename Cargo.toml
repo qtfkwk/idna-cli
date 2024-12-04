@@ -1,15 +1,15 @@
 [package]
 name = "idna-cli"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 description = "Encode/decode Unicode domain names to/from IDNA ASCII"
 license = "MIT"
 repository = "https://github.com/qtfkwk/idna-cli"
 
 [dependencies]
-clap = { version = "4.5.20", features = ["derive", "wrap_help"] }
+clap = { version = "4.5.22", features = ["derive", "wrap_help"] }
 clap-cargo = "0.14.1"
-idna = "1.0.2"
-indexmap = { version = "2.6.0", features = ["serde"] }
-serde = { version = "1.0.213", features = ["derive"] }
-serde_json = "1.0.132"
+idna = "1.0.3"
+indexmap = { version = "2.7.0", features = ["serde"] }
+serde = { version = "1.0.215", features = ["derive"] }
+serde_json = "1.0.133"
