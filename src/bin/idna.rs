@@ -1,4 +1,4 @@
-use clap::{builder::Styles, Parser};
+use clap::{Parser, builder::Styles};
 use idna_cli::*;
 use indexmap::IndexMap;
 use std::path::PathBuf;
