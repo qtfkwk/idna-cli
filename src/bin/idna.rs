@@ -1,24 +1,18 @@
-use clap::{Parser, builder::Styles};
-use idna_cli::*;
-use indexmap::IndexMap;
-use std::path::PathBuf;
+use {
+    clap::Parser,
+    clap_cargo::style::CLAP_STYLING,
+    idna_cli::{Domain, print_csv_result, read_lines},
+    indexmap::IndexMap,
+    std::path::PathBuf,
+};
 
 const EXIT_CODE_INVALID_OUTPUT_FORMAT: i32 = 1;
 const EXIT_CODE_INPUT_FILES_DONT_EXIST: i32 = 2;
 
 const OUTPUT_FORMATS: &[&str] = &["csv", "json", "json-pretty", "rust", "rust-pretty"];
 
-const STYLES: Styles = Styles::styled()
-    .header(clap_cargo::style::HEADER)
-    .usage(clap_cargo::style::USAGE)
-    .literal(clap_cargo::style::LITERAL)
-    .placeholder(clap_cargo::style::PLACEHOLDER)
-    .error(clap_cargo::style::ERROR)
-    .valid(clap_cargo::style::VALID)
-    .invalid(clap_cargo::style::INVALID);
-
 #[derive(Parser)]
-#[command(name = "idna", about, version, max_term_width = 80, styles = STYLES)]
+#[command(name = "idna", about, version, max_term_width = 80, styles = CLAP_STYLING)]
 struct Cli {
     /// Decode IDNA ASCII input to Unicode
     #[arg(short, long)]
@@ -36,6 +30,7 @@ struct Cli {
     domains: Vec<String>,
 }
 
+#[allow(clippy::too_many_lines)]
 fn main() {
     let cli = Cli::parse();
 
@@ -61,7 +56,7 @@ fn main() {
             "Paths do not exist: {}",
             dont_exist
                 .iter()
-                .map(|x| format!("{x:?}"))
+                .map(|x| format!("{}", x.display()))
                 .collect::<Vec<_>>()
                 .join(", ")
         );
